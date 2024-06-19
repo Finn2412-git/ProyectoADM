@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/assets/frontend/css/styles01.css">
+    <link rel="stylesheet" href="/assets/frontend/css/StyleAudioButton.css">
+</head>
+<body>
+    <nav>
+        {{ menu }}
+    </nav>
+    <main>
+        {{ main }}
+    </main>
+
+    <!-- Elemento de audio -->
+    <audio id="myAudio" loop>
+        <source src="/assets/frontend/audio/OST.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <!-- Botón para controlar el audio -->
+    <div id="audioControl" class="audio-control">🔇</div>
+
+    <!-- Incluir el archivo de script -->
+    <script src="/assets/frontend/js/audioControl.js"></script>
+</body>
+</html>

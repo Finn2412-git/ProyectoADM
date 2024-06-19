@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanicus Login</title>
+    <link rel="stylesheet" href="/assets/backend/css/styles.css">
+    <script>
+        // Función para iniciar la reproducción del audio al hacer clic en cualquier parte de la pantalla
+        function startAudio() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        };
+    </script>
+</head>
+<body onclick="startAudio()"> <!-- Agregar el evento onclick en el body -->
+    <!-- Agregar el elemento de audio -->
+    <audio id="myAudio">
+        <source src="file:///C:/Users/nfuen/Downloads/Omnissiah/OST.mp3" type="audio/mpeg">
+    </audio>
+
+    <section>
+        <h3>Login</h3>
+        <div>
+            <p>Ingrese sus credenciales</p>
+        </div>
+        <div>
+            <form id="formLogin" class="login-form">
+                <div>
+                    <label for="correo">Email:</label>
+                </div>
+                <div>
+                    <input type="email" id="correo" name="correo" placeholder="example@example.cl" required>
+                </div>
+                <div>
+                    <label for="clave">Clave:</label>
+                </div>
+                <div>
+                    <input type="password" id="clave" name="clave" placeholder="Tu Clave Aquí" required>
+                </div>
+                <div>
+                    <input type="submit" name="entrar" value="Entrar">
+                </div>
+            </form>
+            <div id="mensajeError"></div> <!-- Contenedor para mensajes de error -->
+        </div>
+    </section>
+
+    <script src="/assets/backend/js/app.js"></script>
+</body>
+</html>

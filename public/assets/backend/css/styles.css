@@ -1,0 +1,67 @@
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden; /* Ocultar el desplazamiento vertical durante la animación */
+}
+
+/* Estilos para el contenedor del formulario de login */
+.login-container {
+    margin-top: -200px; /* Inicialmente oculto arriba de la pantalla */
+    opacity: 0; /* Inicialmente transparente */
+    transition: margin-top 3s ease, opacity 3s ease; /* Transición suave con duración de 2 segundos */
+    position: relative;
+    animation: slideIn 4s forwards; /* Animación para desplazarse desde la parte superior */
+}
+
+/* Estilos para el formulario de login */
+.login-form {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+/* Estilos para los campos de texto en el formulario de login */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555555;
+    color: #ffffff;
+}
+
+/* Estilos para el botón de envío en el formulario de login */
+.login-form input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #bb2200;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilos para el botón de envío cuando se pasa el ratón por encima */
+.login-form input[type="submit"]:hover {
+    background-color: #ff4400;
+}
+
+/* Animación para desplazarse desde la parte superior */
+@keyframes slideIn {
+    from {
+        margin-top: -200px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 100px;
+        opacity: 1;
+    }
+}
