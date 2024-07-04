@@ -1,5 +1,3 @@
-// authMiddleware.js
-
 // Middleware para verificar la sesión del usuario
 function authMiddleware(req, res, next) {
     if (req.session && req.session.user) {

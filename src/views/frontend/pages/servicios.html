@@ -1,8 +1,19 @@
+<!-- Archivo: servicios.html -->
 <section>
     <header>
+        <link rel="stylesheet" href="/assets/frontend/css/Servicios.css">
         <h3>Servicios</h3>
     </header>
-    <div>
-        {{ contenido }}
+    <div class="container">
+        <div class="products">
+            <div class="product" onclick="showDetails('Producto 1', 'Descripción del producto 1')">Producto 1</div>
+            <div class="product" onclick="showDetails('Producto 2', 'Descripción del producto 2')">Producto 2</div>
+            <div class="product" onclick="showDetails('Producto 3', 'Descripción del producto 3')">Producto 3</div>
+            <div class="product" onclick="showDetails('Producto 4', 'Descripción del producto 4')">Producto 4</div>
+        </div>
+        <div class="product-details">
+            <h2 id="product-title">Imagen del producto</h2>
+            <p id="product-description">Detalles del producto</p>
+        </div>
     </div>
 </section>

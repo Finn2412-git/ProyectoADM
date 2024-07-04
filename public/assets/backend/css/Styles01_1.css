@@ -1,0 +1,136 @@
+/* Style for the body to give it a dark, metallic background */
+body {
+    background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the header and footer */
+header, footer {
+    background: #5c0000;
+    color: #ffcc00;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #ffcc00;
+}
+
+header h1, footer p {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Style for the navigation bar */
+nav {
+    background: #5c0000;
+    border-bottom: 3px solid #ffcc00;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Style for the main content area */
+main {
+    padding: 20px;
+    background: #3e3e3e;
+    border: 1px solid #5c0000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background: #f44336;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000;
+}
+
+article {
+    background: #b71c1c;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #000000;
+}
+
+article header, article footer {
+    background: #7f0000;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000000;
+}
+
+article h2 {
+    color: #ffcc00;
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+aside {
+    background: #FFB74D;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000;
+    margin: 20px 0;
+}
+
+/* Additional styling for buttons and links */
+button, .btn {
+    background: #5c0000;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover, .btn:hover {
+    background: #7f0000;
+    color: #ffffff;
+}
+
+/* Footer styling for a cohesive look */
+footer {
+    background: #1e1e1e;
+    color: #ffcc00;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid #ffcc00;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section {
+        flex: 2;
+    }
+
+    aside {
+        flex: 1;
+    }
+}

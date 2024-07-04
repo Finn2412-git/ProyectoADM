@@ -20,4 +20,8 @@ router.get('/contacto', (req, res) => {
     loadAppHtml(tipo_plantilla, 'contacto', `${process.env.APP_NAME}: Contacto`, 'Correo de contacto: example@example.cl', res);
 });
 
+router.get('/paginaderelleno', (req, res) => {
+    loadAppHtml(tipo_plantilla, 'paginaderelleno', `${process.env.APP_NAME}: Pagina de relleno`, 'Creo que el nombre es bastante descriptivo o no ?', res);
+});
+
 module.exports = router;

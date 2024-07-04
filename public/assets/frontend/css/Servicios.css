@@ -1,0 +1,81 @@
+/* Archivo: styles01.css */
+
+/* Otros estilos existentes */
+
+body {
+    background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.product {
+    background: #3e3e3e;
+    border: 1px solid #5c0000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.product:hover {
+    background: #5c0000;
+    color: #ffffff;
+}
+
+.product-details {
+    background: #3e3e3e;
+    border: 1px solid #5c0000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h2, p {
+    margin: 0;
+    color: #ffcc00;
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .products {
+        width: 50%;
+    }
+
+    .product-details {
+        margin-left: 20px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+}
