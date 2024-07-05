@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const loadAppHtml = require('../utils/loadAppHtml');
 const authMiddleware = require('../controllers/middlewares/authMiddleware');
-const { listarProductos } = require('../controllers/backend/productoController');
+const { listarProductos } = require('../controllers/backend/productoController');  // Solo listarProductos
 
 const tipo_plantilla = 'backend';
 
@@ -18,6 +18,8 @@ router.get('/modulo-clientes', authMiddleware, (req, res) => {
     loadAppHtml(tipo_plantilla, 'clientes', `${process.env.APP_NAME}: Módulo Clientes`, 'Gestión de Clientes', res);
 });
 
-router.get('/modulo-productosBD', authMiddleware, listarProductos);
+router.route('/modulo-productosBD')
+    .get(authMiddleware, listarProductos)
+    .post(authMiddleware, listarProductos);  // Usar la misma función para GET y POST
 
 module.exports = router;

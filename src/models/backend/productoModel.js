@@ -1,5 +1,3 @@
-// productoModel.js
-
 const DataBase = require('../conexionModel');
 
 class ProductoModel {
@@ -21,6 +19,20 @@ class ProductoModel {
             throw error;
         }
     }
+
+    static async agregarProducto(nombre, valor) {
+        const db = DataBase.getInstance();
+        try {
+            const query = 'INSERT INTO productos (nombre, valor) VALUES (?, ?)';
+            const resultado = await db.ejecutarQuery(query, [nombre, valor]);
+            console.log('Producto agregado correctamente');
+            return resultado;
+        } catch (error) {
+            console.error('Error al agregar producto: ', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = ProductoModel;
+
