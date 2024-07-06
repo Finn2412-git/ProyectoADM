@@ -67,6 +67,66 @@ async function listarProductos(req, res) {
     }
 }
 
+
+
+async function MostrarProductos(req, res) {
+    try {
+        const productos = await Producto.listarProductos();
+        let html;
+
+        if (productos.length > 0) {
+            html = `
+                <h3>Lista de Productos</h3>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="/assets/frontend/css/Servicios.css">
+                <div class="main-container">
+                    <div class="productos-container" id="productos-container">
+            `;
+
+            productos.forEach((producto) => {
+                html += `
+                    <div class="producto" onclick="mostrarDetalleProducto('${producto.nombre}', '${producto.valor}', '${producto.imagen_url}')">
+                        <img src="${producto.imagen_url}" alt="${producto.nombre}">
+                        <h4>${producto.nombre}</h4>
+                        <span>Precio: ${producto.valor}</span>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                    <div class="detalle-producto" id="detalle-producto">
+                        <!-- Los detalles del producto seleccionado se mostrarán aquí -->
+                    </div>
+                </div>
+                <script>
+                    function mostrarDetalleProducto(nombre, valor, img) {
+                        const detalleProducto = document.getElementById('detalle-producto');
+                        detalleProducto.innerHTML = \`
+                            <h4>\${nombre}</h4>
+                            <img src="\${img}" alt="\${nombre}">
+                            <span>Precio: \${valor}</span>
+                        \`;
+                    }
+                </script>
+            `;
+        } else {
+            html = '<h3>No hay productos para mostrar</h3>';
+        }
+
+        loadAppHtml('frontend', 'servicios', `${process.env.APP_NAME}: Módulo servicios`, html, res);
+    } catch (error) {
+        console.error('Error al listar productos desde el controlador: ', error);
+        res.status(500).send('Error interno del servidor');
+    }
+}
+
+
+
+
+
+
+
 // Controlador para agregar un producto
 async function agregarProducto(req, res) {
     const { nombre, valor } = req.body;
@@ -95,4 +155,4 @@ async function editarProducto(req, res) {
     }
 }
 
-module.exports = { listarProductos, agregarProducto, editarProducto };
+module.exports = { listarProductos, agregarProducto, editarProducto, MostrarProductos };

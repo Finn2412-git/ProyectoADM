@@ -10,7 +10,7 @@ class ProductoModel {
     static async listarProductos() {
         const db = DataBase.getInstance();
         try {
-            const query = 'SELECT id, nombre, valor FROM productos';
+            const query = 'SELECT id, nombre, valor, imagen_url FROM productos';
             const productos = await db.ejecutarQuery(query);
             console.log('Productos encontrados: ', productos);
             return productos;
@@ -19,6 +19,8 @@ class ProductoModel {
             throw error;
         }
     }
+
+
 
     static async agregarProducto(nombre, valor) {
         const db = DataBase.getInstance();
